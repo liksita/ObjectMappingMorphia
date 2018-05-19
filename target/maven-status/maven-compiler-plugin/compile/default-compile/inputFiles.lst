@@ -1,7 +1,10 @@
-/home/diana/Dokumente/eclipse/workspace/objectMapping/src/main/java/com/haw_hamburg/de/objectMapping/dataNucleus/helper/Main.java
-/home/diana/Dokumente/eclipse/workspace/objectMapping/src/main/java/com/haw_hamburg/de/objectMapping/dataNucleus/entities/Post.java
-/home/diana/Dokumente/eclipse/workspace/objectMapping/src/main/java/com/haw_hamburg/de/objectMapping/dataNucleus/app/FrameworkTest.java
-/home/diana/Dokumente/eclipse/workspace/objectMapping/src/main/java/com/haw_hamburg/de/objectMapping/dataNucleus/entities/Comment.java
-/home/diana/Dokumente/eclipse/workspace/objectMapping/src/main/java/com/haw_hamburg/de/objectMapping/dataNucleus/entities/User.java
-/home/diana/Dokumente/eclipse/workspace/objectMapping/src/main/java/com/haw_hamburg/de/objectMapping/dataNucleus/app/MongoHibernate.java
-/home/diana/Dokumente/eclipse/workspace/objectMapping/src/main/java/com/haw_hamburg/de/objectMapping/utils/Result.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/helper/Main.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/entities/Post.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/app/MongoHibernate.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/entities/User.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/entities/Comment.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/app/FrameworkTest.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/entities/Discussion.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/utils/Result.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/entities/LoginData.java
+/home/diana/Dokumente/eclipse/workspace/objectMappingMorphia/src/main/java/com/haw_hamburg/de/objectMapping/Morphia/entities/Activity.java
