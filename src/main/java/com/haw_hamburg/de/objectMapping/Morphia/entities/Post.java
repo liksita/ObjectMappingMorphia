@@ -9,7 +9,7 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Property;
 import org.mongodb.morphia.annotations.Reference;
 
-@Entity("Post")
+@Entity(noClassnameStored = true)
 public class Post extends Activity {
 
 	private String title;

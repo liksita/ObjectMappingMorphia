@@ -9,7 +9,7 @@ import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Property;
 import org.mongodb.morphia.annotations.Reference;
 
-@Entity("Discussion")
+@Entity(noClassnameStored = true)
 public class Discussion {
 
 	@Id

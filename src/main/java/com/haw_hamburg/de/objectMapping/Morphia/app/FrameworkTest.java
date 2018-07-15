@@ -35,12 +35,12 @@ public class FrameworkTest {
 		// Set Read Preference
 		this.mongoClient.setReadPreference(ReadPreference.secondary());
 		this.databaseName = "UserPostsMorphia";
-		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.User");
-		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Post");
-		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Comment");
-		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Activity");
-		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.LoginData");
-		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Discussion");
+//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.User");
+//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Post");
+//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Comment");
+//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Activity");
+//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.LoginData");
+//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Discussion");
 		datastore = morphia.createDatastore(mongoClient, databaseName);
 		mh = new MongoHibernate(inserts, this);
 	}

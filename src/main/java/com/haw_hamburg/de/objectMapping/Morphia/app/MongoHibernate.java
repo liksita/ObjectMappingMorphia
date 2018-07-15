@@ -28,11 +28,6 @@ public class MongoHibernate {
 		this.setFrTest(frTest);
 		this.daoUser = new BasicDAO<>(User.class, frTest.getDatastore());
 		this.daoDiscussion = new BasicDAO<>(Discussion.class, frTest.getDatastore());
-		// Properties properties = new Properties();
-		// properties.setProperty("javax.jdo.PersistenceManagerFactoryClass",
-		// "org.datanucleus.api.jdo.JDOPersistenceManagerFactory");
-		// properties.setProperty("javax.jdo.option.ConnectionURL","mongodb:/UserPosts");
-		// pmf = JDOHelper.getPersistenceManagerFactory(properties);
 
 	}
 
