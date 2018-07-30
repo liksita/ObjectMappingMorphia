@@ -7,7 +7,6 @@ import com.haw_hamburg.de.objectMapping.Morphia.utils.Result;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
-import com.mongodb.ReadPreference;
 
 public class FrameworkTest {
 
@@ -15,11 +14,16 @@ public class FrameworkTest {
 	private Integer inserts = 100000;
 	private Integer runs = 5;
 
-	private MongoHibernate mh;
+	// Result Object
+	private Result resultWrite;
+	private Result resultRead;
+
+	StoreActivity storeActivity;
+	ReadActivity readActivity;
+
 	private String databaseName;
 	private Morphia morphia;
 	private Datastore datastore;
-	private Result result;
 	private DB db;
 	private MongoClient mongoClient;
 
@@ -33,16 +37,10 @@ public class FrameworkTest {
 		morphia = new Morphia();
 		this.mongoClient = new MongoClient("127.0.0.1:27017");
 		// Set Read Preference
-		this.mongoClient.setReadPreference(ReadPreference.secondary());
 		this.databaseName = "UserPostsMorphia";
-//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.User");
-//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Post");
-//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Comment");
-//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Activity");
-//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.LoginData");
-//		morphia.mapPackage("com.haw_hamburg.de.objectMapping.Morphia.entities.Discussion");
 		datastore = morphia.createDatastore(mongoClient, databaseName);
-		mh = new MongoHibernate(inserts, this);
+		storeActivity = new StoreActivity(inserts, this);
+		readActivity = new ReadActivity(this);
 	}
 
 	// Collection
@@ -77,16 +75,10 @@ public class FrameworkTest {
 		this.runs = runs;
 	}
 
-	//
-	//// private ServerAddress initialise() throws UnknownHostException {
-	//// ServerAddress addrs = new ServerAddress(this.node, this.port);
-	//// return addrs;
-	//// }
-	//
 	public Result performWriteTest() throws Exception {
 
 		// Intialize Variables
-		this.result = new Result();
+		this.resultWrite = new Result();
 
 		// Create Test Environment
 		createTestEnvironment();
@@ -98,29 +90,49 @@ public class FrameworkTest {
 			long startTime = System.nanoTime();
 
 			// Insert Documents
-			// mh.persistEntities();
-			mh.persistEntitiesDataNucleus();
-
-			// Print Count
-			printCount();
+			storeActivity.persistEntitiesDataNucleus();
 
 			// Record End Time and calculate Run Time
 			long estimatedTime = System.nanoTime() - startTime;
 			double seconds = (double) estimatedTime / 1000000000.0;
 
-			result.addMeasureResult("Run" + (i), seconds, this.inserts);
-			System.out.println("Run" + (i) + " finished");
+			// Print Count
+			printCount();
+
+			resultWrite.addMeasureResult("Write Run" + (i), seconds, this.inserts, true);
+			System.out.println("Write Run" + (i) + " finished");
 
 		}
 
-		// Delete Test Environment
-		// deleteTestEnvironment();
-
 		// Print Result
-		return this.result;
+		return this.resultWrite;
 
 	}
+	
+	public Result performReadTest() throws Exception {
+		// Intialize Variables
+		this.resultRead = new Result();
 
+			// Record Start Time
+			long startTime = System.nanoTime();
+
+			// Read Documents
+			readActivity.readEntities();
+
+			// Record End Time and calculate Run Time
+			long estimatedTime = System.nanoTime() - startTime;
+			double seconds = (double) estimatedTime / 1000000000.0;
+
+			resultRead.addMeasureResult("Read All Entries", seconds, this.inserts * this.runs, false);
+
+		deleteTestEnvironment();
+
+		// Print Result
+		return this.resultRead;
+	}
+
+
+	@SuppressWarnings("deprecation")
 	private void createTestEnvironment() throws Exception {
 
 		this.db = this.mongoClient.getDB(this.databaseName);

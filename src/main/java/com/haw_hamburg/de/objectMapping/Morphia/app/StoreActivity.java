@@ -1,11 +1,9 @@
 package com.haw_hamburg.de.objectMapping.Morphia.app;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Properties;
 
 import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.dao.BasicDAO;
+//import org.mongodb.morphia.dao.BasicDAO;
 
 import com.haw_hamburg.de.objectMapping.Morphia.entities.Comment;
 import com.haw_hamburg.de.objectMapping.Morphia.entities.Discussion;
@@ -13,21 +11,21 @@ import com.haw_hamburg.de.objectMapping.Morphia.entities.LoginData;
 import com.haw_hamburg.de.objectMapping.Morphia.entities.Post;
 import com.haw_hamburg.de.objectMapping.Morphia.entities.User;
 
-public class MongoHibernate {
+public class StoreActivity {
 
 	// Testkonfig
 	public Integer inserts = 1000;
 
 	private static int runCount = 0;
-	private BasicDAO<User, Datastore> daoUser;
-	private BasicDAO<Discussion, Datastore> daoDiscussion;
+//	private BasicDAO<User, Datastore> daoUser;
+//	private BasicDAO<Discussion, Datastore> daoDiscussion;
 	private FrameworkTest frTest;
 
-	public MongoHibernate(Integer inserts, FrameworkTest frTest) {
+	public StoreActivity(Integer inserts, FrameworkTest frTest) {
 		this.inserts = inserts;
 		this.setFrTest(frTest);
-		this.daoUser = new BasicDAO<>(User.class, frTest.getDatastore());
-		this.daoDiscussion = new BasicDAO<>(Discussion.class, frTest.getDatastore());
+//		this.daoUser = new BasicDAO<>(User.class, frTest.getDatastore());
+//		this.daoDiscussion = new BasicDAO<>(Discussion.class, frTest.getDatastore());
 
 	}
 
