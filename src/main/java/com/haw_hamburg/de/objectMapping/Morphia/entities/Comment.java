@@ -11,6 +11,9 @@ public class Comment extends Activity {
 
 	@Reference
 	private Post post;
+	
+	Comment() {
+	}
 
 	public Comment(Date date) {
 		super(date);

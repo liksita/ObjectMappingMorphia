@@ -17,6 +17,9 @@ public class Post extends Activity {
 	private Set<Comment> userComments = new HashSet<>();
 
 	// constructors, getters and setters...
+	
+	Post() {
+	}
 
 	public Post(String title, Date date) {
 		super(date);

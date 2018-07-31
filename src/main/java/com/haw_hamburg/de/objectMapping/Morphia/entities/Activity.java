@@ -16,6 +16,9 @@ public abstract class Activity {
 	User author;
 
 	// constructors, getters and setters...
+	
+	Activity() {
+	}
 
 	public Activity(Date date) {
 		this.date = date;

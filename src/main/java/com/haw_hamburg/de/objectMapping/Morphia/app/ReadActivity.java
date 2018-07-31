@@ -12,7 +12,6 @@ import com.haw_hamburg.de.objectMapping.Morphia.entities.User;
 import org.mongodb.morphia.Datastore;
 //import org.mongodb.morphia.dao.BasicDAO;
 
-
 public class ReadActivity {
 
 	private List<User> users;
@@ -32,13 +31,14 @@ public class ReadActivity {
 
 	public void readEntities() {
 		Datastore datastore = frTest.getDatastore();
-		Query<User> queryUsers = datastore.createQuery(com.haw_hamburg.de.objectMapping.Morphia.entities.User.class);
+		Query<User> queryUsers = datastore.createQuery(User.class);
 		users = queryUsers.asList();
-		Query<Post> queryPosts = datastore.createQuery(com.haw_hamburg.de.objectMapping.Morphia.entities.Post.class);
+		Query<Post> queryPosts = datastore.createQuery(Post.class);
 		posts = queryPosts.asList();
-		Query<Comment> queryComments = datastore.createQuery(com.haw_hamburg.de.objectMapping.Morphia.entities.Comment.class);
+		;
+		Query<Comment> queryComments = datastore.createQuery(Comment.class);
 		comments = queryComments.asList();
-		Query<Discussion> queryDiscussions = datastore.createQuery(com.haw_hamburg.de.objectMapping.Morphia.entities.Discussion.class);
+		Query<Discussion> queryDiscussions = datastore.createQuery(Discussion.class);
 		discussions = queryDiscussions.asList();
 	}
 

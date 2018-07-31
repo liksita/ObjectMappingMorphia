@@ -18,6 +18,9 @@ public class Discussion {
 
 	@Reference
 	private Set<User> users = new HashSet<>();
+	
+	Discussion() {
+	}
 
 	public Discussion(String topic) {
 		this.topic = topic;

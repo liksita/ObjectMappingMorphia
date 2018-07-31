@@ -5,7 +5,7 @@ import com.haw_hamburg.de.objectMapping.Morphia.app.FrameworkTest;
 public class Main {
 	public static void main(String[] args) {
 		// MongoDB
-		FrameworkTest frameworkTest = new FrameworkTest(1, 1);
+		FrameworkTest frameworkTest = new FrameworkTest(500, 3);
 		try {
 			System.out.println("WRITE TEST");
 			frameworkTest.performWriteTest().printMeasureResultWrite();
