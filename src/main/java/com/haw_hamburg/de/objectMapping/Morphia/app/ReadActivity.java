@@ -41,6 +41,20 @@ public class ReadActivity {
 		Query<Discussion> queryDiscussions = datastore.createQuery(Discussion.class);
 		discussions = queryDiscussions.asList();
 	}
+	
+	public void readUsers() {
+		Datastore datastore = frTest.getDatastore();
+		Query<User> queryUsers = datastore.createQuery(User.class);
+		queryUsers.filter("firstName = ", "user1");
+		users = queryUsers.asList();
+//		Query<Post> queryPosts = datastore.createQuery(Post.class);
+//		queryPosts.filter("title = ", "post1");
+//		posts = queryPosts.asList();
+//		Query<Comment> queryComments = datastore.createQuery(Comment.class);
+//		comments = queryComments.asList();
+//		Query<Discussion> queryDiscussions = datastore.createQuery(Discussion.class);
+//		discussions = queryDiscussions.asList();
+	}
 
 	// public static void main(String[] args) {
 	// readActivity.readEntities();
@@ -49,6 +63,7 @@ public class ReadActivity {
 	// System.out.println("Comment count: " + readActivity.getComments().size());
 	// System.out.println("Discussion count: " +
 	// readActivity.getDiscussions().size());
+	
 	// }
 
 	public List<User> getUsers() {
