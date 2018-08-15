@@ -21,13 +21,13 @@ public class User {
 	@Embedded
 	private LoginData loginData;
 
-	@Reference
+	@Reference (lazy = false)
 	private Set<Post> userPosts = new HashSet<>();
 
-	@Reference
+	@Reference (lazy = false)
 	private Set<Comment> userComments = new HashSet<>();
 
-	@Reference
+	@Reference (lazy = false)
 	private Set<Discussion> discussions = new HashSet<>();
 
 	// constructors, getters and setters...

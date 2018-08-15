@@ -12,7 +12,7 @@ public abstract class Activity {
 
 	Date date;
 	
-	@Reference
+	@Reference (lazy = false)
 	User author;
 
 	// constructors, getters and setters...

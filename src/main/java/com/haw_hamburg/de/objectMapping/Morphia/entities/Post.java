@@ -13,7 +13,7 @@ public class Post extends Activity {
 
 	private String title;
 
-	@Reference
+	@Reference (lazy = false)
 	private Set<Comment> userComments = new HashSet<>();
 
 	// constructors, getters and setters...

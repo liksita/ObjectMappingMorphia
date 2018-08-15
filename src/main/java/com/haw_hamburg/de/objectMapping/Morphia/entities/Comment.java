@@ -9,7 +9,7 @@ import org.mongodb.morphia.annotations.Reference;
 @Entity(noClassnameStored = true)
 public class Comment extends Activity {
 
-	@Reference
+	@Reference (lazy = false)
 	private Post post;
 	
 	Comment() {

@@ -16,7 +16,7 @@ public class Discussion {
 
 	private String topic;
 
-	@Reference
+	@Reference (lazy = false)
 	private Set<User> users = new HashSet<>();
 	
 	Discussion() {
